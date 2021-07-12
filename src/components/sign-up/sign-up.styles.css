@@ -1,0 +1,30 @@
+.signup__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.signup__body__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.signup__body {
+  margin-bottom: 20px !important;
+  min-width: 400px !important;
+}
+.signup-btn {
+  margin-bottom: 10px;
+}
+.signup-btn .MuiButton-containedPrimary:hover {
+  background-color: rgb(28, 179, 28) !important;
+}
+
+.signin-signup__link > a:-webkit-any-link {
+  text-decoration: underline;
+}

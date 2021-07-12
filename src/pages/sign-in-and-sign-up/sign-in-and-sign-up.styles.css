@@ -1,0 +1,10 @@
+.signin-signup__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signin-signup__main > a:-webkit-any-link {
+  text-decoration: underline;
+}

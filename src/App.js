@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react";
+import "./App.css";
+import { Switch, Route } from "react-router-dom";
 
-function App() {
+// import components
+import Navbar from "./components/navbar/navbar.component";
+import HomePage from "./pages/homepage/homepage.component";
+import SignInAndSignUp from "./pages/sign-in-and-sign-up/sign-in-and-sign-up.component";
+import { auth } from "./firebase/firebsae-utils";
+
+const App = () => {
+  const [currentUser, setCurrentUser] = useState();
+  console.log(process.env);
+  useEffect(() => {
+    let unsubscribeFromAuth = null;
+    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      console.log("userAuth: ", userAuth);
+      setCurrentUser(userAuth);
+    });
+
+    // unsubscribe
+    return () => {
+      unsubscribeFromAuth();
+    };
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar currentUser={currentUser} />
+      <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => <HomePage currentUser={currentUser} />}
+        />
+
+        <Route path="/sign-in-and-sign-up" component={SignInAndSignUp} />
+      </Switch>
+    </>
   );
-}
+};
 
 export default App;

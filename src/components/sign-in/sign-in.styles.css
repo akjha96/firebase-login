@@ -1,0 +1,22 @@
+.signin__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.signin__body {
+  margin-bottom: 12px !important;
+  min-width: 400px !important;
+}
+.login-btn {
+  margin-bottom: 10px !important;
+}
+
+.login-btn .MuiButton-containedPrimary:hover {
+  background-color: rgb(28, 179, 28) !important;
+}
+.signin__buttons {
+  min-width: 400px !important;
+}

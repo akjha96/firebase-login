@@ -1,0 +1,32 @@
+.navbar__main {
+  height: 50px;
+  background-color: rgb(78, 142, 243);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+a:-webkit-any-link {
+  color: -webkit-link;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.navbar__left {
+  font-size: large;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+}
+
+.navbar__right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar__item__user {
+  padding-right: 10px;
+}
